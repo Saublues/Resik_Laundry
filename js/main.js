@@ -310,7 +310,83 @@ function getServiceTypeName(serviceType) {
     };
     return serviceNames[serviceType] || serviceType;
 }
+function createOrderElement(order, index) {
+    const div = document.createElement('div');
+    div.className = 'data-item';
+    
+    div.innerHTML = `
+        <h4>Pesanan #${order.id}</h4>
+        <p><strong>Nama:</strong> ${order.customerName}</p>
+        <p><strong>Metode:</strong> ${order.deliveryMethod === 'dijemput' ? '🚗 Dijemput' : '🚶 Antar Sendiri'}</p>
+        <p><strong>Waktu:</strong> ${new Date(order.timeSchedule).toLocaleString('id-ID')}</p>
+        <p><strong>Layanan:</strong> ${getServiceTypeName(order.serviceType)}</p>
+        <p><strong>Barang:</strong> ${order.itemType}</p>
+        <p><strong>Alamat:</strong> ${order.address}</p>
+        <p><strong>No HP:</strong> ${order.phoneNumber}</p>
+        ${order.notes ? `<p><strong>Catatan:</strong> ${order.notes}</p>` : ''}
+        <p><strong>Status:</strong> <span style="color: #4CAF50;">${order.status}</span></p>
+        <p><strong>Waktu Pesanan:</strong> ${order.timestamp}</p>
+        <button type="button" class="download-btn" onclick="exportToStrukByIndex(${index})">📥 Download Struk</button>
+    `;
+    
+    return div;
+}
 
+
+function exportToStruk(order) {
+  // Buat string struk dengan format vertikal, rapi seperti struk kasir
+  const strukLines = [
+    `===== PESANAN #${order.id} =====`,
+    `Nama          : ${order.customerName}`,
+    `Metode        : ${order.deliveryMethod === 'dijemput' ? '🚗 Dijemput' : '🚶 Antar Sendiri'}`,
+    `Waktu         : ${new Date(order.timeSchedule).toLocaleString('id-ID')}`,
+    `Layanan       : ${getServiceTypeName(order.serviceType)}`,
+    `Barang        : ${order.itemType}`,
+    `Alamat        : ${order.address}`,
+    `No HP         : ${order.phoneNumber}`,
+    order.notes ? `Catatan       : ${order.notes}` : '',
+    `Status        : ${order.status}`,
+    `Waktu Pesanan : ${order.timestamp}`,
+    `==============================`
+  ];
+
+  // Filter untuk hapus baris kosong (jika notes kosong)
+  const strukText = strukLines.filter(line => line).join('\n');
+
+  // Buat Blob dan link untuk download file .txt
+  const blob = new Blob([strukText], { type: 'text/plain' });
+  const url = URL.createObjectURL(blob);
+
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = `struk_pesanan_${order.id}.txt`;
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+}
+
+
+// Fungsi untuk mendapatkan nama layanan
+function getServiceTypeName(serviceType) {
+    const serviceNames = {
+        'cuci_kering': 'Cuci Kering',
+        'cuci_setrika': 'Cuci + Setrika',
+        'dry_cleaning': 'Dry Cleaning',
+        'setrika_saja': 'Setrika Saja',
+        'cuci_sepatu': 'Cuci Sepatu',
+        'cuci_karpet': 'Cuci Karpet'
+    };
+    return serviceNames[serviceType] || serviceType;
+}
+
+function exportToStrukByIndex(index) {
+    if (index >= 0 && index < laundryOrders.length) {
+        exportToStruk(laundryOrders[index]);
+    } else {
+        alert('Data pesanan tidak ditemukan!');
+    }
+}
 // Fungsi untuk export data ke JSON (untuk backup/debugging)
 function exportToJSON() {
     if (laundryOrders.length === 0) {

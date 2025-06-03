@@ -99,7 +99,7 @@
           Data berhasil disimpan! Terima kasih telah menggunakan layanan kami.
         </div>
 
-        <form id="laundryForm" onsubmit="submitOrder(event)">
+        <form id="laundryForm">
           <div class="form-group fade-in-section fade-in-section">
             <label for="customerName">Nama Customer *</label>
             <input
@@ -221,9 +221,9 @@
             "
           >
             <h3>📋 Data Pesanan Tersimpan</h3>
-            <button type="button" onclick="exportToJSON()" class="download-btn">
-              📥 Download JSON
-            </button>
+            <!-- <button type="button" class="download-btn">
+              📥 Download Struk
+            </button> -->
           </div>
           <div class="data-list" id="dataList"></div>
           <div class="download-info">
@@ -405,5 +405,6 @@
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
     <script src="js/animation.js"></script>
+    <!-- <script src="js/form.js"></script> -->
   </body>
 </html>
