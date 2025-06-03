@@ -1,0 +1,22 @@
+/* Animation Base Styles */
+.fade-in-section {
+  opacity: 0;
+  transform: translateY(20px); /* Starts slightly below its final position */
+  /* Change the transition duration here */
+  transition: opacity 1s ease-out, transform 1s ease-out; /* Increased to 1.2 seconds */
+  will-change: opacity, transform; /* Optimize for animation performance */
+}
+
+/* Animation Active State */
+.fade-in-section.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.hover-overlay {
+  position: absolute;
+  top: -10rem; /* Naik 40px dari atas card */
+  left: 0;
+  right: 0;
+  z-index: 1;
+}

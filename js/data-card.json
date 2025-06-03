@@ -1,0 +1,59 @@
+[
+  {
+    "nama": "Pencucian Pakaian",
+    "icon": "<i class='fi fi-tr-workwear'></i>",
+    "img": "../pakaian.jpg",
+    "desc": "Layanan pencucian pakaian yang cepat dan berkualitas.",
+    "color": "dark-blue"
+  },
+  {
+    "nama": "Jaket",
+    "icon": "<i class='fi fi-ts-vest-patches'></i>",
+    "img": "../jaket.jpg",
+    "desc": "Jaket dijamin bersih dan wangi setelah dicuci.",
+    "color": "dark-blue"
+  },
+  {
+    "nama": "Jas",
+    "icon": "<i class='fi fi-ts-lab-coat'></i>",
+    "img": "../jas.jpg",
+    "desc": "Jas tampil kinclong dan harum, siap temani momen penting Anda.",
+    "color": "dark-blue"
+  },
+  {
+    "nama": "Selimut",
+    "icon": "<i class='fi fi-ts-blanket'></i>",
+    "img": "../selimut.jpg",
+    "desc": "Selimut bersih menyeluruh, wangi tahan lama untuk tidur lebih nyenyak.",
+    "color": "dark-blue"
+  },
+  {
+    "nama": "Sepatu",
+    "icon": "<i class='fi fi-ts-soccer-boots'></i>",
+    "img": "../sepatu.jpg",
+    "desc": "Sepatu bersih maksimal dan bebas bau, nyaman dipakai seharian.",
+    "color": "dark-blue"
+  },
+  {
+    "nama": "Karpet",
+    "icon": "<i class='fi fi-ts-rectangle-panoramic'></i>",
+    "img": "../karpet.jpg",
+    "desc": "Karpet kembali bersinar, bebas debu dan harum menyegarkan ruangan.",
+    "color": "dark-blue"
+  },
+  {
+    "nama": "Baju Wisuda",
+    "icon": "<i class='fi fi-ts-user-graduate'></i>",
+    "img": "../wisuda.jpg",
+    "desc": "Baju wisuda tampil elegan dan harum, siap untuk momen tak terlupakan.",
+    "color": "dark-blue"
+  },
+  {
+    "nama": "Gaun Pesta",
+    "icon": "<i class='fi fi-ts-dress'></i>",
+    "img": "../gaun.jpg",
+    "desc": "Gaun pesta bersih sempurna, harum memikat seperti baru beli.",
+    "color": "dark-blue"
+  }
+  
+]
