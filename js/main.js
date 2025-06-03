@@ -216,17 +216,17 @@ function generateOrderId() {
 }
 
 // Fungsi untuk mengirim data ke Google Sheets (DISABLED - menggunakan download JSON)
-async function sendToGoogleSheets(data) {
-    // Function disabled - menggunakan download JSON sebagai gantinya
-    console.log('Data yang akan disimpan:', data);
+// async function sendToGoogleSheets(data) {
+//     // Function disabled - menggunakan download JSON sebagai gantinya
+//     console.log('Data yang akan disimpan:', data);
     
-    // Auto download JSON setelah 3 detik (opsional)
-    setTimeout(() => {
-        if (confirm('Apakah Anda ingin mendownload data sebagai file JSON?')) {
-            exportToJSON();
-        }
-    }, 1000);
-}
+//     // Auto download JSON setelah 3 detik (opsional)
+//     setTimeout(() => {
+//         if (confirm('Apakah Anda ingin mendownload data sebagai file JSON?')) {
+//             exportToJSON();
+//         }
+//     }, 1000);
+// }
 
 // Fungsi untuk memuat data yang sudah ada
 function loadExistingData() {
